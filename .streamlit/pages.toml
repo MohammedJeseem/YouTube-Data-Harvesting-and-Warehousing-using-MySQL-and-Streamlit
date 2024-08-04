@@ -1,0 +1,11 @@
+[[pages]]
+path = "src/views/home.py"
+name = "Home"
+icon = "🏡"
+
+[[pages]]
+path = "src/views/youtube_data_harvest.py"
+name = "Project"
+icon = "💽"
+
+

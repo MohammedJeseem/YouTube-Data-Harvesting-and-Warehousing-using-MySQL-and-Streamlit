@@ -1,0 +1,36 @@
+[[pages]]
+name = "Overview"
+icon = "🏡"
+is_section = true
+
+[[pages]]
+path = "src/views/home.py"
+name = "Home"
+icon = ":material/maps_home_work:"
+
+[[pages]]
+name = "Project"
+icon = "🎥"
+is_section = true
+
+[[pages]]
+path = "src/views/youtube_data_harvest.py"
+name = "Youtube Data Harvest"
+icon = "🔎"
+
+[[pages]]
+path = "src/views/channel_details.py"
+name = "Channel Details"
+icon = "📝"
+
+[[pages]]
+path = "src/views/channel_analysis.py"
+name = "Channel Analysis"
+icon = "📊"
+
+[[pages]]
+path = "src/views/channel_visualization.py"
+name = "Channel Visualization"
+icon = "📈"
+
+
