@@ -46,7 +46,7 @@ class DatabaseManager:
                                     video_name VARCHAR(100),
                                     video_Description VARCHAR(1000),
                                     Thumbnail VARCHAR(100),
-                                    Tags VARCHAR(250),
+                                    Tags VARCHAR(1000),
                                     publishedAt DATETIME,
                                     Duration VARCHAR(10),
                                     View_Count BIGINT,
@@ -68,16 +68,14 @@ class DatabaseManager:
             logging.error(f"Error creating tables: {e}")
             raise
     
-    def upload_data(self, df_channel, df_playlist, df_videos, df_comments):
+    def upload_data(self, df, table_name):
         try:
             self._check_connection()
-            df_channel.to_sql('channel', self.engine, if_exists='append', index=False)
-            df_playlist.to_sql('playlist', self.engine, if_exists='append', index=False)
-            df_videos['Tags'] = df_videos['Tags'].apply(lambda x: ', '.join(x) if isinstance(x, list) else '')
-            df_videos.to_sql('videos', self.engine, if_exists='append', index=False)
-            df_comments.to_sql('comments', self.engine, if_exists='append', index=False)
+            if table_name == "videos":
+                df['Tags'] = df['Tags'].apply(lambda x: ', '.join(x) if isinstance(x, list) else '')
+            df.to_sql(table_name, self.engine, if_exists='append', index=False)
             self.db_instance._connection.commit()
-            print('Data uploaded successfully.')
+            print(f'Data uploaded successfully to {table_name}.')
         except Exception as e:
             logging.warning(f"Exception Name: {type(e).__name__}")
             logging.warning(f"Exception Desc: {e}")

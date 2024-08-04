@@ -71,13 +71,22 @@ if st.button("Upload to MYSQL database"):
                 # Transform corresponding data into pandas dataframes
                 df_channel = pd.DataFrame([youtube_api.channel_information(channel_ID)])
                 df_playlist = pd.DataFrame(youtube_api.playlist_information(channel_ID))
-                df_videos = pd.DataFrame(youtube_api.video_information(video_IDS=youtube_api.get_video_ids(channel_ID)))
-                df_comments = pd.DataFrame(youtube_api.comments_information(video_IDS=youtube_api.get_video_ids(channel_ID)))
+                video_ids = youtube_api.get_video_ids(channel_ID)
+                df_videos = pd.DataFrame(youtube_api.video_information(video_IDS=video_ids))
+                df_comments = pd.DataFrame(youtube_api.comments_information(video_IDS=video_ids))
                 
-                # Ensure dataframes are not empty before uploading
-                if not df_channel.empty and not df_playlist.empty and not df_videos.empty and not df_comments.empty:
-                    # Load the dataframe into table in SQL Database
-                    db_manager.upload_data(df_channel, df_playlist, df_videos, df_comments)
+                # Ensure each dataframe is checked and uploaded if not empty
+                if not df_channel.empty:
+                    db_manager.upload_data(df_channel, table_name="channel")
+                if not df_playlist.empty:
+                    db_manager.upload_data(df_playlist, table_name="playlist")
+                if not df_videos.empty:
+                    db_manager.upload_data(df_videos, table_name="videos")
+                if not df_comments.empty:
+                    db_manager.upload_data(df_comments, table_name="comments")
+                
+                # Check if at least one dataframe is uploaded successfully
+                if not df_channel.empty or not df_playlist.empty or not df_videos.empty or not df_comments.empty:
                     st.success('Channel information, playlists, videos, comments are uploaded successfully.')
                 else:
                     st.warning('No data retrieved to upload. Please check the channel ID and try again.')
