@@ -1,6 +1,6 @@
-# YouTube-Data-Harvesting-and-Warehousing-using-MySQL-and-Streamlit
+# YouTube Data Harvesting and Warehousing
 
-Welcome to the **YouTube Data Harvesting and Warehousing** project! This project involves collecting and storing YouTube data using MySQL and Streamlit. 
+Welcome to the **YouTube Data Harvesting and Warehousing** project! This project involves collecting and storing YouTube data using MySQL and Streamlit.
 
 ## 📋 Table of Contents
 
@@ -39,18 +39,18 @@ cd YouTube-Data-Harvesting-and-Warehousing-using-MySQL-and-Streamlit
 
 ### Create and Activate a Virtual Environment
 
+- **On macOS/Linux:**
 
-- #### bash
-  ```
+  ```bash
   python -m venv venv
-  ```
-- #### On MAC user
-  ```
   source venv/bin/activate
   ```
-- #### On Windows user
-  ```
-   venv\Scripts\activate
+
+- **On Windows:**
+
+  ```bash
+  python -m venv venv
+  venv\Scripts\activate
   ```
 
 ### Install Dependencies
@@ -61,20 +61,20 @@ pip install -r requirements.txt
 
 ### Set Up MySQL Database
 
-1. **Install MySQL:** Follow [MySQL Installation Guide](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/).
+1. **Install MySQL:** Follow the [MySQL Installation Guide](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/).
 2. **Create a Database:** Use the provided SQL schema to set up your database.
 
 ### Configure Your Environment
 
-Update the database connection settings in src/mysql_db/mysql_connection.py.
+Update the database connection settings in `src/mysql_db/mysql_connection.py`.
 
 ## 💻 Usage
 
 ### Run the Streamlit Application
 
-bash
+```bash
 streamlit run app.py
-
+```
 
 ### Example Queries
 
@@ -98,17 +98,16 @@ Here are some example screenshots of the Streamlit application:
 We welcome contributions! If you want to improve this project, please follow these steps:
 
 1. Fork the repository.
-2. Create a new branch (git checkout -b feature-branch).
-3. Commit your changes (git commit -am 'Add new feature').
-4. Push to the branch (git push origin feature-branch).
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Commit your changes (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
 5. Create a new Pull Request.
 
 ## 🏅 Credits
 
 - **Gokul M** - For his project reference [YouTube Data Harvesting and Warehousing using SQL and Streamlit](https://github.com/Gokul170601/YouTube-Data-Harvesting-and-Warehousing-using-SQL-and-Streamlit).
-- **Profile** - [LinkedIn](www.linkedin.com/in/gokul-m-j17/)
-- **Mail** - [Gmail](gokulgokul6847@gmail.com)
-
+  - **LinkedIn:** [Gokul M](https://www.linkedin.com/in/gokul-m-j17/)
+  - **Gmail:** [gokulgokul6847@gmail.com](mailto:gokulgokul6847@gmail.com)
 
 ## 📧 Contact
 
@@ -116,7 +115,5 @@ For any inquiries or suggestions, please contact:
 
 ### Mohammed Jeseem .M
 
-- **Gmail** : [mohammedjezeem786@gmail.com](mohammedjezeem786@gmail.com)
-- **LinkedIn** : [https://www.linkedin.com/in/mohammed-jeseem-25894b29b/](https://www.linkedin.com/in/mohammed-jeseem-25894b29b/)
-
-
+- **Gmail:** [mohammedjezeem786@gmail.com](mailto:mohammedjezeem786@gmail.com)
+- **LinkedIn:** [Mohammed Jeseem](https://www.linkedin.com/in/mohammed-jeseem-25894b29b/)
