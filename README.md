@@ -64,9 +64,44 @@ pip install -r requirements.txt
 1. **Install MySQL:** Follow the [MySQL Installation Guide](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/).
 2. **Create a Database:** Use the provided SQL schema to set up your database.
 
+## 🌐 Getting the YouTube Data API Key
+
+To fetch data from YouTube, you'll need an API key. Follow these steps to obtain one:
+
+1. **Create a Google Cloud Project:**
+   - Go to the [Google Cloud Console](https://console.cloud.google.com/).
+   - Click on **Select a Project** at the top of the page and then **New Project**.
+   - Enter a project name and click **Create**.
+
+2. **Enable the YouTube Data API:**
+   - In the Google Cloud Console, navigate to **APIs & Services** > **Library**.
+   - Search for **YouTube Data API v3**.
+   - Click on **YouTube Data API v3** and then **Enable**.
+
+3. **Create Credentials:**
+   - Go to **APIs & Services** > **Credentials**.
+   - Click on **Create Credentials** and choose **API key**.
+   - Copy the API key that is generated.
+
+4. **Configure API Key in Your Project:**
+   - Update the `src/config.ini` file with your API key.
+
 ### Configure Your Environment
 
-Update the database connection settings in `src/mysql_db/mysql_connection.py`.
+Update the database connection settings and youtube api settings in `src/config.ini`.
+```
+[mysqlDB]
+host = localhost
+db = youtube
+user = root
+pass = root
+
+
+[youtubeAPI]
+api_service_name = youtube
+api_version = v3
+api_Key = PASTE_YOUR_API_HERE
+```
 
 ## 💻 Usage
 
