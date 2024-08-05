@@ -142,42 +142,6 @@ class YouTubeAPI:
                 video_info.append(data)
         return video_info
     
-    # def comments_information(self, video_IDS):
-    #     youtube = self.get_youtube_service()
-    #     comments_info = []
-    #     disabled_comments_videos = []  # To store videos with disabled comments
-    #     for video_id in video_IDS:
-    #         try:
-    #             request = youtube.commentThreads().list(
-    #                 part="snippet",
-    #                 videoId=video_id,
-    #                 maxResults=100
-    #             )
-    #             response = request.execute()
-
-    #             for i in response.get('items', []):
-    #                 mysql_datetime_str = parse_datetime(i['snippet']['topLevelComment']['snippet']['publishedAt'])
-    #                 data = dict(
-    #                     video_id=i['snippet']['videoId'],
-    #                     comment_id=i['snippet']['topLevelComment']['id'],
-    #                     comment_text=i['snippet']['topLevelComment']['snippet']['textDisplay'],
-    #                     comment_author=i['snippet']['topLevelComment']['snippet']['authorDisplayName'],
-    #                     comment_publishedat=mysql_datetime_str
-    #                 )
-    #                 comments_info.append(data)
-    #         except HttpError as e:
-    #             if e.resp.status == 403 and 'commentsDisabled' in str(e):
-    #                 disabled_comments_videos.append(video_id)
-    #             else:
-    #                 st.error(f"An error occurred for video ID {video_id}: {e}")
-
-    #     # Log or handle the list of videos with disabled comments
-    #     if disabled_comments_videos:
-    #         st.warning(f"Comments are disabled for the following video IDs: {disabled_comments_videos}")
-
-    #     return comments_info
-    
-    
     def comments_information(self, video_IDS):
         youtube = self.get_youtube_service()
         comments_info = []
