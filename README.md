@@ -39,19 +39,27 @@ cd YouTube-Data-Harvesting-and-Warehousing-using-MySQL-and-Streamlit
 
 ### Create and Activate a Virtual Environment
 
-- **On macOS/Linux:**
-
+- **Create Environment**
   ```bash
-  python -m venv venv
-  source venv/bin/activate
+  python -m venv .venv
   ```
 
-- **On Windows:**
-
-  ```bash
-  python -m venv venv
-  venv\Scripts\activate
+- **Windows command prompt**
   ```
+  .venv\Scripts\activate.bat
+  ```
+
+- **Windows PowerShell**
+  ```
+  .venv\Scripts\Activate.ps1
+  ```
+
+- **macOS and Linux**
+  ```
+  source .venv/bin/activate
+  ```
+Once activated, you will see your environment name in parentheses before your prompt. "(.venv)"
+
 
 ### Install Dependencies
 
