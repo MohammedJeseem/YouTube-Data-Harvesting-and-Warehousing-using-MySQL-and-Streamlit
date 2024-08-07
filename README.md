@@ -20,6 +20,8 @@ This project is designed to extract data from YouTube, store it in a MySQL datab
 - Harvest data from YouTube channels and videos.
 - Store and manage data efficiently using MySQL.
 - Create interactive visualizations with Streamlit.
+  
+ ### Demo video : [LinkedIn](https://www.linkedin.com/posts/mohammed-jeseem-25894b29b_youtubedataharvest-activity-7226920496104103936-ODrj?utm_source=share&utm_medium=member_desktop)
 
 ## 🚀 Features
 
